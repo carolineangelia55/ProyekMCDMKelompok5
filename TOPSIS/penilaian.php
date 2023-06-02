@@ -47,49 +47,55 @@
                     $jumlahAlternatif = count($alternatif);
                     $jumlahKriteria = count($kriteria);
 
-                    echo '<form method="POST" action="penilaian.php">';
-                    echo '<div id="tableContainer">';
-                    echo '<table>';
-
-                    echo '<tr>';
-                    echo '<th></th>';
-
-                    for ($k = 0; $k < $jumlahKriteria; $k++) {
-                        $kriteriaName = $kriteria[$k];
-                        echo "<th>$kriteriaName</th>";
-                    }
-                    
-                    echo '</tr>';
-
-                    for ($i = 0; $i < $jumlahAlternatif; $i++) {
-                        $alternatifName = $alternatif[$i];
+                        echo '<form method="POST" action="penilaian.php">';
+                        echo '<div id="tableContainer">';
+                        echo '<table>';
                         echo '<tr>';
-                        echo "<th>$alternatifName</th>";
-                        for ($j = 0; $j < $jumlahKriteria; $j++) {
-                            $nilaiName = "nilai[$i][$j]";
-                            echo '<td><input type="text" name="'.$nilaiName.'" class="textInput" required></td>';
-                        }
-                        echo '</tr>';
-                    }
+                        echo '<th></th>';
 
-                    echo '</table>';
+                        for ($i = 0; $i < $jumlahKriteria; $i++) {
+                            $kriteriaName = $kriteria[$i];
+                            echo "<th>$kriteriaName</th>";
+                        }
+                    
+                        echo '</tr>';
+
+                        for ($j = 0; $j < $jumlahAlternatif; $j++) {
+                            $alternatifName = $alternatif[$j];
+
+                            echo '<tr>';
+                                echo "<th>$alternatifName</th>";
+
+                            for ($k = 0; $k < $jumlahKriteria; $k++) {
+                                $nilaiName = "nilai[$j][$k]";
+                                echo '<td>
+                                        <input type="text" name="'.$nilaiName.'" class="textInput" required>
+                                    </td>';
+                            }
+                            echo '</tr>';
+                        }
+
+                        echo '</table>';
                     echo '</div>';
 
                     // Input weight
                     echo '<div id="weightContainer">';
-                    echo '<table>';
-                    echo "<th>Weight</th>";
-                    echo '<tr>';
+                        echo '<table>';
+                            echo "<th>Weight</th>";
+                                echo '<tr>';
 
-                    for ($k = 0; $k < $jumlahKriteria; $k++) {
-                        $weightName = "weight[$k]";
-                        echo '<td><input type="text" name="'.$weightName.'" class="textInput" required></td>';
-                    }
+                                for ($l = 0; $l < $jumlahKriteria; $l++) {
+                                    $weightName = "weight[$l]";
+                                    $kriteriaName = $kriteria[$l];
+                                    echo '<td>
+                                            <input type="text" name="'.$weightName.'" class="textInput" required style="text-align:center" placeholder="'.$kriteriaName.'">
+                                        </td>';
+                                }
                     
-                    echo '</tr>';
-                    echo '</table>';
-                    echo '</div>';
-                    echo '<button type="submit" value="Submit">Submit</button>';
+                                echo '</tr>';
+                            echo '</table>';
+                        echo '</div>';
+                        echo '<button type="submit" value="Submit">Submit</button>';
                     echo '</form>';
                 }
             ?>
