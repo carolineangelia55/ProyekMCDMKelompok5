@@ -32,7 +32,20 @@ for i, criterion in enumerate(criteria):
 
 #Keuntungan dan biaya
 # 1 for keuntungan, -1 for biaya
-optimization_direction = [1, 1, 1, 1, 1]  # Adjust , gatau yapa code e wkekwekwo
+# Hitung yij+ and yij- 
+y_plus = np.max(normalized_matrix, axis=0)
+y_minus = np.min(normalized_matrix, axis=0)
+
+# Tentuin keuntungan atau biaya
+optimization_direction = []
+for i in range(len(y_plus)):
+    if y_plus[i] > y_minus[i]:
+        optimization_direction.append(1)  # Keuntungan 
+    else:
+        optimization_direction.append(-1)  # Biaya
+# Apply 
+y_plus *= optimization_direction
+y_minus *= optimization_direction
 
 # Positive Ideal Solution (PIS)
 pis = []
@@ -52,7 +65,7 @@ dist_pis = np.sqrt(np.sum(np.square(normalized_matrix[criteria] - pis), axis=1))
 dist_nis = np.sqrt(np.sum(np.square(normalized_matrix[criteria] - nis), axis=1))
 
 
-#preferensi    
+# Preferensi    
 # Hitung preferensi setiap alternatif
 preference_values = dist_nis / (dist_nis + dist_pis)
 
