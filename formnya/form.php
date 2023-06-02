@@ -67,7 +67,6 @@
             </script>
     </head>
     <body>
-        <!-- ALTERNATIF -->
         <div class="contact-us">
             <p style="font-size: 20px; margin: right 40px;">
                <b> == Silahkan Isi Form dibawah ini : == <b>
@@ -78,45 +77,47 @@
                 <input type="text" id="inputtujuan" name="inputtujuan" placeholder="Tujuan">
             </div>
             <div id="inputContainer">
-            <div class="inputRow"><div style="position: relative; display: inline-block;">
-                <input type="text" name="inputField" class="textInput"placeholder="Input Alternatif" required style="padding-right: 37px;">
-                <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;"  class="removeButton" onclick="removeInputAlternatif(this)">x</span>
-            </div>
-            <div class="inputRow"><div style="position: relative; display: inline-block;">
-                <input type="text" name="inputField" class="textInput"placeholder="Input Alternatif" required style="padding-right: 37px;">
-                <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;" class="removeButton" onclick="removeInputAlternatif(this)">x</span>
-            </div>
-            <div class="inputRow">
-            <div class="inputRow"><div style="position: relative; display: inline-block;">
-                <input type="text" name="inputField" class="textInput"placeholder="Input Alternatif" required style="padding-right: 37px;">
-                <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;" class="removeButton" onclick="removeInputAlternatif(this)">x</span>
-            </div>
-            </div>
-            <tr>
+                <!-- ALTERNATIF -->
+                <div class="inputRow"><div style="position: relative; display: inline-block;">
+                    <input type="text" name="inputField" class="textInput"placeholder="Input Alternatif" required style="padding-right: 37px;">
+                    <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;"  class="removeButton" onclick="removeInputAlternatif(this)">x</span>
+                </div>
+                <div class="inputRow"><div style="position: relative; display: inline-block;">
+                    <input type="text" name="inputField" class="textInput"placeholder="Input Alternatif" required style="padding-right: 37px;">
+                    <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;" class="removeButton" onclick="removeInputAlternatif(this)">x</span>
+                </div>
+                <div class="inputRow">
+                    <div class="inputRow"><div style="position: relative; display: inline-block;">
+                        <input type="text" name="inputField" class="textInput"placeholder="Input Alternatif" required style="padding-right: 37px;">
+                        <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;" class="removeButton" onclick="removeInputAlternatif(this)">x</span>
+                    </div>
+                </div>
+                <tr>
 				<button type="submit" onclick="addInputAlternatif()">Add Alternatif</button></tr><br><br>
             
-            <!-- NAMA KRITERIA -->
-            <div class="inputRoww"><div style="position: relative; display: inline-block;">
-                <input type="text" name="inputField" class="textInput"placeholder="Input Kriteria" required style="padding-right: 37px;">
-                <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;"  class="removeButton" onclick="removeInputKriteria(this)">x</span>
-            </div>
-            <div class="inputRoww"><div style="position: relative; display: inline-block;">
-                <input type="text" name="inputField" class="textInput"placeholder="Input Kriteria" required style="padding-right: 37px;">
-                <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;" class="removeButton" onclick="removeInputKriteria(this)">x</span>
-            </div>
-            <div class="inputRoww">
-            <div class="inputRoww"><div style="position: relative; display: inline-block;">
-                <input type="text" name="inputField" class="textInput"placeholder="Input Kriteria" required style="padding-right: 37px;">
-                <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;" class="removeButton" onclick="removeInputKriteria(this)">x</span>
-            </div>
-            </div>
-            <tr>
-				<button type="submit" onclick="addInputKriteria()">Add Kriteria</button></tr><br>
+                <!-- NAMA KRITERIA -->
+                <div class="inputRoww"><div style="position: relative; display: inline-block;">
+                    <input type="text" name="inputField" class="textInput"placeholder="Input Kriteria" required style="padding-right: 37px;">
+                    <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;"  class="removeButton" onclick="removeInputKriteria(this)">x</span>
+                </div>
+                <div class="inputRoww"><div style="position: relative; display: inline-block;">
+                    <input type="text" name="inputField" class="textInput"placeholder="Input Kriteria" required style="padding-right: 37px;">
+                    <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;" class="removeButton" onclick="removeInputKriteria(this)">x</span>
+                </div>
+                <div class="inputRoww">
+                    <div class="inputRoww"><div style="position: relative; display: inline-block;">
+                        <input type="text" name="inputField" class="textInput"placeholder="Input Kriteria" required style="padding-right: 37px;">
+                        <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;" class="removeButton" onclick="removeInputKriteria(this)">x</span>
+                    </div>
+                </div>
+                <tr>
+                <button type="submit" onclick="addInputKriteria()">Add Kriteria</button></tr><br>
 
-            <form method="POST" action="penilaian.php">
-                <div id="tableContainer"></div>
-                <button type="button" value="Submit">Submit</button>
-            </form>
+                <form method="POST" action="penilaian.php">
+                    <div id="tableContainer"></div>
+                    <button type="button" value="Submit">Submit</button>
+                </form>
+            </div>
         </div> 
     </body>
 </html>
