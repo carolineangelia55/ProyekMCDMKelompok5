@@ -43,7 +43,7 @@
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $alternatif = $_POST['inputFieldAlternatif'];
                     $kriteria = $_POST['inputFieldKriteria'];
-                
+
                     $jumlahAlternatif = count($alternatif);
                     $jumlahKriteria = count($kriteria);
 
@@ -51,22 +51,21 @@
                     echo '<div id="tableContainer">';
                     echo '<table>';
 
-                    // Header tabel
                     echo '<tr>';
-                    echo '<th></th>'; // Kolom kosong pada pojok kiri atas
+                    echo '<th></th>';
                     for ($k = 0; $k < $jumlahKriteria; $k++) {
-                        $kriteria = $_POST['inputFieldKriteria'][$k];
-                        echo "<th>$kriteria</th>";
+                        $kriteriaName = $kriteria[$k];
+                        echo "<th>$kriteriaName</th>";
                     }
                     echo '</tr>';
 
-                    // Isi tabel
                     for ($i = 0; $i < $jumlahAlternatif; $i++) {
                         $alternatifName = $alternatif[$i];
                         echo '<tr>';
                         echo "<th>$alternatifName</th>";
                         for ($j = 0; $j < $jumlahKriteria; $j++) {
-                        echo '<td><input type="text" name="nilai['.$i.']['.$j.']" class="textInput" required></td>';
+                            $nilaiName = "nilai[$i][$j]";
+                            echo '<td><input type="text" name="'.$nilaiName.'" class="textInput" required></td>';
                         }
                         echo '</tr>';
                     }
