@@ -80,16 +80,16 @@
             <div id="inputContainer">
             <div class="inputRow"><div style="position: relative; display: inline-block;">
                 <input type="text" name="inputField" class="textInput"placeholder="Input Alternatif" required style="padding-right: 37px;">
-                <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;"  class="removeButton" onclick="removeInput(this)">x</span>
+                <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;"  class="removeButton" onclick="removeInputAlternatif(this)">x</span>
             </div>
             <div class="inputRow"><div style="position: relative; display: inline-block;">
                 <input type="text" name="inputField" class="textInput"placeholder="Input Alternatif" required style="padding-right: 37px;">
-                <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;" class="removeButton" onclick="removeInput(this)">x</span>
+                <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;" class="removeButton" onclick="removeInputAlternatif(this)">x</span>
             </div>
             <div class="inputRow">
             <div class="inputRow"><div style="position: relative; display: inline-block;">
                 <input type="text" name="inputField" class="textInput"placeholder="Input Alternatif" required style="padding-right: 37px;">
-                <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;" class="removeButton" onclick="removeInput(this)">x</span>
+                <span style="position: absolute; top: 0; right: 0; padding-left: 18px; padding-top: 5px; font-size: 20px; color: black; cursor: pointer;" class="removeButton" onclick="removeInputAlternatif(this)">x</span>
             </div>
             </div>
             <tr>
