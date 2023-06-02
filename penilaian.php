@@ -51,6 +51,7 @@
 
             <form method="POST" action="proses.php">
                 <div id="tableContainer"></div>
+                <br>
                 <button type="button" value="Submit">Submit</button>
             </form>
         </div>
