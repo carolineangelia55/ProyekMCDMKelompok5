@@ -60,10 +60,8 @@ for i, criterion in enumerate(criteria):
 # Hitung jarak
 # Jarak PIS
 dist_pis = np.sqrt(np.sum(np.square(normalized_matrix[criteria] - pis), axis=1))
-
 # Jarak NIS
 dist_nis = np.sqrt(np.sum(np.square(normalized_matrix[criteria] - nis), axis=1))
-
 
 # Preferensi    
 # Hitung preferensi setiap alternatif
