@@ -107,12 +107,15 @@ for i in range (len(penambahan)):
             urutan[j] = temp
 
 # Menentukan identitas setiap kriteria
-identitas = ["" for i in range (len(data))]
+identitas = [[] for i in range (len(data))]
 for i in range (len(pengurangan)):
+    temp = []
+    temp.append(kriteria[i])
     if (pengurangan[i]<0):
-        identitas[i] = "Effect"
+        temp.append("Effect")
     else:
-        identitas[i] = "Cause"
+        temp.append("Cause")
+    identitas[i] = temp
 
 # Menentukan relasi yang memiliki pengaruh signifikan
 relasi = []
