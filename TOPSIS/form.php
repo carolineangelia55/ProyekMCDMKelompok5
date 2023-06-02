@@ -65,6 +65,7 @@
         </script>
     </head>
     <body>
+    <?php include_once "../navbar.php";?>
         <div class="contact-us">
             <p style="font-size: 20px; margin: right 40px;">
                <b> == Silahkan Isi Form dibawah ini : == <b>

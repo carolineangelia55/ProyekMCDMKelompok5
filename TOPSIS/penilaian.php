@@ -53,10 +53,12 @@
 
                     echo '<tr>';
                     echo '<th></th>';
+
                     for ($k = 0; $k < $jumlahKriteria; $k++) {
                         $kriteriaName = $kriteria[$k];
                         echo "<th>$kriteriaName</th>";
                     }
+                    
                     echo '</tr>';
 
                     for ($i = 0; $i < $jumlahAlternatif; $i++) {

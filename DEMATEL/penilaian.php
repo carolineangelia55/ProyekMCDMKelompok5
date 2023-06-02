@@ -41,10 +41,7 @@
             <br>
             <?php
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                    $alternatif = $_POST['inputFieldAlternatif'];
                     $kriteria = $_POST['inputFieldKriteria'];
-
-                    $jumlahAlternatif = count($alternatif);
                     $jumlahKriteria = count($kriteria);
 
                     echo '<form method="POST" action="penilaian.php">';
@@ -53,16 +50,18 @@
 
                     echo '<tr>';
                     echo '<th></th>';
+
                     for ($k = 0; $k < $jumlahKriteria; $k++) {
                         $kriteriaName = $kriteria[$k];
                         echo "<th>$kriteriaName</th>";
                     }
+
                     echo '</tr>';
 
-                    for ($i = 0; $i < $jumlahAlternatif; $i++) {
-                        $alternatifName = $alternatif[$i];
+                    for ($i = 0; $i < $jumlahKriteria; $i++) {
+                        $kriteriaName = $kriteria[$i];
                         echo '<tr>';
-                        echo "<th>$alternatifName</th>";
+                        echo "<th>$kriteriaName</th>";
                         for ($j = 0; $j < $jumlahKriteria; $j++) {
                             $nilaiName = "nilai[$i][$j]";
                             echo '<td><input type="text" name="'.$nilaiName.'" class="textInput" required></td>';
