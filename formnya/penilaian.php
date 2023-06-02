@@ -39,21 +39,6 @@
                 5: Sangat Baik
             </p>
             <br>
-            <!-- <div>
-                <label for="inputbaris">Jumlah Baris:</label>
-                <input type="number" id="inputbaris" name="inputbaris">
-            </div>
-            <div>
-                <label for="inputkolom">Jumlah Kolom:</label>
-                <input type="number" id="inputkolom" name="inputkolom">
-            </div>
-            <button id="btnCreateTable" type="button">Buat Tabel</button>
-
-            <form method="POST" action="proses.php">
-                <div id="tableContainer"></div>
-                <br>
-                <button type="button" value="Submit">Submit</button>
-            </form> -->
             <?php
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $alternatif = $_POST['inputFieldAlternatif'];
@@ -95,21 +80,3 @@
         </div>
     </body>
 </html>
-<?php
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//     $data = $_POST["data"];
-
-//     // Melakukan operasi atau aksi lain dengan data yang diterima
-//     // Misalnya, menyimpan data ke database atau menampilkan hasilnya
-
-//     // Contoh: Menampilkan data yang diterima
-//     echo "<h2>Data yang Diterima:</h2>";
-//     echo "<table>";
-//     foreach ($data as $row) {
-//         echo "<tr>";
-//         foreach ($row as $cell) {
-//             echo "<td>" . $cell . "</td>";
-//         }
-//     }
-// }
-?>

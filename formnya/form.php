@@ -124,8 +124,7 @@
                     </div>
                     <button type="submit" onclick="addInputKriteria()">Add Kriteria</button><br>
                     <div id="tableContainer"></div>
-                
-                <button type="submit" value="Submit">Submit</button>
+                    <button type="submit" value="Submit">Submit</button>
                 </form>
             </div>
         </div> 
