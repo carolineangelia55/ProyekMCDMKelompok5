@@ -11,13 +11,12 @@
                 var inputRows = inputContainer.getElementsByClassName("inputRow");
 
                 // Pastikan minimal dua input fields tersisa
-                if (inputRows.length > 3) {
+                if (inputRows.length > 2) {
                     inputContainer.removeChild(inputRow);
                 } else {
                     alert("Minimal dua baris harus tersisa!");
                 }
             }
-
 
             function removeInputKriteria(button) {
                 var inputRoww = button.parentNode.parentNode;
@@ -25,7 +24,7 @@
                 var inputRowss = inputContainer.getElementsByClassName("inputRoww");
 
                 // Ensure at least two input fields remain
-                if (inputRowss.length > 3) {
+                if (inputRowss.length > 2) {
                 inputContainer.removeChild(inputRoww);
                 }else {
                     alert("Minimal dua baris harus tersisa!");
