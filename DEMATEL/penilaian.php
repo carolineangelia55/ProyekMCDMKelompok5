@@ -32,11 +32,11 @@
         <div class="contact-us">
             <p>
                 == Keterangan == <br>
-                1: Sangat Buruk <br>
-                2: Buruk <br>
-                3: Cukup <br>
-                4: Baik <br>
-                5: Sangat Baik
+                0: Tidak Ada Pengaruh<br>
+                1: Pengaruh Sedikit <br>
+                2: Pengaruh Sedang <br>
+                3: Pengaruh Banyak <br>
+                4: Pengaruh Sangat Banyak
             </p>
             <br>
             <?php
@@ -44,7 +44,7 @@
                     $kriteria = $_POST['inputFieldKriteria'];
                     $jumlahKriteria = count($kriteria);
 
-                    echo '<form method="POST" action="penilaian.php">';
+                    echo '<form method="POST" action="arraytoexcel.php">';
                     echo '<div id="tableContainer">';
                     echo '<table>';
 
@@ -62,9 +62,9 @@
                         $kriteriaName = $kriteria[$i];
                         echo '<tr>';
                         echo "<th>$kriteriaName</th>";
+                        echo '<input type="hidden" name="kriteriaNames[]" class="textInput" value="'.$kriteriaName.'" required>';
                         for ($j = 0; $j < $jumlahKriteria; $j++) {
-                            $nilaiName = "nilai[$i][$j]";
-                            echo '<td><input type="text" name="'.$nilaiName.'" class="textInput" required></td>';
+                            echo '<td><input type="text" name="nilaiValues[]" class="textInput" required></td>';
                         }
                         echo '</tr>';
                     }

@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
+import json as json
 
-
-data = pd.read_excel('data.xlsx')
+data = pd.read_excel('C:\\xampp0\\htdocs\\ProyekMCDMKelompok5\\DEMATEL\\data.xlsx')
 
 title = 0
 #  Mencari nilai total untuk setiap baris
@@ -128,6 +128,6 @@ for i in range (len(res)):
             temp.append(res[i][j])
             relasi.append(temp)
 
-print(urutan)
-print(identitas)
-print(relasi)
+hasil = {"urutan": urutan, "identitas": identitas, "relasi": relasi}
+
+print(json.dumps(hasil))
