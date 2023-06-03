@@ -47,7 +47,7 @@
                     $jumlahAlternatif = count($alternatif);
                     $jumlahKriteria = count($kriteria);
 
-                        echo '<form method="POST" action="penilaian.php">';
+                        echo '<form method="POST" action="arraytoexcel.php">';
                         echo '<div id="tableContainer">';
                         echo '<table>';
                         echo '<tr>';
@@ -56,6 +56,7 @@
                         for ($i = 0; $i < $jumlahKriteria; $i++) {
                             $kriteriaName = $kriteria[$i];
                             echo "<th>$kriteriaName</th>";
+                            echo '<input type="hidden" name="kriteriaNames[]" class="textInput" value="'.$kriteriaName.'" required>';
                         }
                     
                         echo '</tr>';
@@ -65,12 +66,10 @@
 
                             echo '<tr>';
                                 echo "<th>$alternatifName</th>";
+                                echo '<input type="hidden" name="alternatifNames[]" class="textInput" value="'.$alternatifName.'" required>';
 
                             for ($k = 0; $k < $jumlahKriteria; $k++) {
-                                $nilaiName = "nilai[$j][$k]";
-                                echo '<td>
-                                        <input type="text" name="'.$nilaiName.'" class="textInput" required>
-                                    </td>';
+                                echo '<td><input type="text" name="nilaiValues[]" class="textInput" required></td>';
                             }
                             echo '</tr>';
                         }

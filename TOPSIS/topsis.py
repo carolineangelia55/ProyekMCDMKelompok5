@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # Load data dr Excel
-data = pd.read_excel('C:\\xampp\\htdocs\\ProyekMCDMKelompok5\\gudang.xlsx')
+data = pd.read_excel('C:\\xampp\\htdocs\\ProyekMCDMKelompok5\\TOPSIS\\data.xlsx')
 # maapkan ges soale kl direction e lsg 'gudang.xlsx' pythonku ndak bisa read :( hiks aneh emg)
 
 # Extract nama alternatif dan kriteria
