@@ -40,64 +40,66 @@
             </p>
             <br>
             <?php
-                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                    $alternatif = $_POST['inputFieldAlternatif'];
-                    $kriteria = $_POST['inputFieldKriteria'];
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $alternatif = $_POST['inputFieldAlternatif'];
+        $kriteria = $_POST['inputFieldKriteria'];
 
-                    $jumlahAlternatif = count($alternatif);
-                    $jumlahKriteria = count($kriteria);
+        $jumlahAlternatif = count($alternatif);
+        $jumlahKriteria = count($kriteria);
 
-                        echo '<form method="POST" action="arraytoexcel.php">';
-                        echo '<div id="tableContainer">';
-                        echo '<table>';
-                        echo '<tr>';
-                        echo '<th></th>';
+        echo '<form method="POST" action="arraytoexcel.php">';
+        echo '<div id="tableContainer">';
+        echo '<table>';
+        echo '<tr>';
+        echo '<th></th>';
 
-                        for ($i = 0; $i < $jumlahKriteria; $i++) {
-                            $kriteriaName = $kriteria[$i];
-                            echo "<th>$kriteriaName</th>";
-                            echo '<input type="hidden" name="kriteriaNames[]" class="textInput" value="'.$kriteriaName.'" required>';
-                        }
-                    
-                        echo '</tr>';
+        for ($i = 0; $i < $jumlahKriteria; $i++) {
+            $kriteriaName = $kriteria[$i];
+            echo "<th>$kriteriaName</th>";
+            echo '<input type="hidden" name="kriteriaNames[]" class="textInput" value="'.$kriteriaName.'" required>';
+        }
 
-                        for ($j = 0; $j < $jumlahAlternatif; $j++) {
-                            $alternatifName = $alternatif[$j];
+        echo '</tr>';
 
-                            echo '<tr>';
-                                echo "<th>$alternatifName</th>";
-                                echo '<input type="hidden" name="alternatifNames[]" class="textInput" value="'.$alternatifName.'" required>';
+        for ($j = 0; $j < $jumlahAlternatif; $j++) {
+            $alternatifName = $alternatif[$j];
 
-                            for ($k = 0; $k < $jumlahKriteria; $k++) {
-                                echo '<td><input type="text" name="nilaiValues[]" class="textInput" required></td>';
-                            }
-                            echo '</tr>';
-                        }
+            echo '<tr>';
+            echo "<th>$alternatifName</th>";
+            echo '<input type="hidden" name="alternatifNames[]" class="textInput" value="'.$alternatifName.'" required>';
 
-                        echo '</table>';
-                    echo '</div>';
+            for ($k = 0; $k < $jumlahKriteria; $k++) {
+                echo '<td><input type="text" name="nilaiValues[]" class="textInput" required></td>';
+            }
+            echo '</tr>';
+        }
 
-                    // Input weight
-                    echo '<div id="weightContainer">';
-                        echo '<table>';
-                            echo "<th>Weight</th>";
-                                echo '<tr>';
+        echo '</table>';
+        echo '</div>';
 
-                                for ($l = 0; $l < $jumlahKriteria; $l++) {
-                                    $weightName = "weight[$l]";
-                                    $kriteriaName = $kriteria[$l];
-                                    echo '<td>
-                                            <input type="text" name="'.$weightName.'" class="textInput" required style="text-align:center" placeholder="'.$kriteriaName.'">
-                                        </td>';
-                                }
-                    
-                                echo '</tr>';
-                            echo '</table>';
-                        echo '</div>';
-                        echo '<button type="submit" value="Submit">Submit</button>';
-                    echo '</form>';
-                }
-            ?>
+        // Input weight
+        echo '<div id="weightContainer">';
+        echo '<table>';
+        echo "<th>Weight</th>";
+        echo '<tr>';
+
+        for ($l = 0; $l < $jumlahKriteria; $l++) {
+            $kriteriaName = $kriteria[$l];
+            echo '<td>
+                    <input type="hidden" name="kriteriaWeights[]" class="textInput" required style="text-align:center" placeholder="'.$kriteriaName.'">;
+                </td>';
+        }
+
+        echo '</tr>';
+        echo '</table>';
+        echo '</div>';
+
+        echo '<button type="submit" value="Submit">Submit</button>';
+        echo '</form>';
+    }
+?>
+
+
         </div>
     </body>
 </html>
