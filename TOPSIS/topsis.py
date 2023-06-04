@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import json as json
 
 # Load data dr Excel
 data = pd.read_excel('C:\\xampp\\htdocs\\ProyekMCDMKelompok5\\TOPSIS\\data.xlsx')
@@ -75,7 +76,12 @@ alternatives_df = pd.DataFrame({'Alternatives': alternatives, 'Preference Values
 
 # Sort descending order
 sorted_alternatives = alternatives_df.sort_values('Preference Values', ascending=False)
+sorted_alternatives = sorted_alternatives['Alternatives'].tolist()
+sorted_preference = alternatives_df.sort_values('Preference Values', ascending=False)
+sorted_preference = sorted_preference['Preference Values'].tolist()
 
-# Print the sorted alternatives / ranking
-print("\nSorted Alternatives:")
-print(sorted_alternatives) #ws akurat sm cth soal di ppt seh
+# print(sorted_alternatives)
+# print(sorted_preference)
+
+hasil = {"sorted_alternatives": sorted_alternatives, "sorted_preference": sorted_preference}
+print(json.dumps(hasil))

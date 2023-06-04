@@ -1,3 +1,10 @@
+<?php
+    $command = escapeshellcmd('C:\Users\ASUS\anaconda3/python topsis.py');
+    $output = shell_exec($command);
+    $arr = json_decode($output);
+    $arr = get_object_vars($arr);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,23 +73,34 @@
     }
 
 
-#urutan tr:nth-child(even){background-color: yellow;}
+    #urutan tr:nth-child(even){background-color: yellow;}
 
-#urutan tr:hover {background-color: white;}
+    #urutan tr:hover {background-color: white;}
 
-    #urutan th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: grey;
-    color: white;
-   }
-
-   table, th, td {
-    width : 40%;
-  border: 2px solid;
-  margin-left:450px;
-}
+        #urutan th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: grey;
+        color: white;
+      }
+      
+    table, th, td {
+        width : 40%;
+      border: 2px solid;
+      margin-left:450px;
+    }
+    button {
+    background: transparent;
+    padding:10px 40px;
+    size: 50px;
+    font-weight: bold;
+    border-radius: 5px;
+    }
+    button:hover {
+      background-color: black;
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -91,11 +109,11 @@
   </p>
   <div class="container podium" style="margin-left: 450px;">
     <div class="podium__item">
-      <p class="podium__city"><b>Supplier 2</b> <br>Score : 1234</p>
+      <p class="podium__city"><b><?php echo $arr['sorted_alternatives'][1]; ?></b> <br>Pref Value: <?php echo $arr['sorted_preference'][1]; ?></p>
       <div class="podium__rank second" style="color:black;">2</div>
     </div>
     <div class="podium__item">
-      <p class="podium__city"><b>Supplier 3</b> <br>Score : 3124</p>
+      <p class="podium__city"><b><?php echo $arr['sorted_alternatives'][0]; ?> </b> <br>Pref Value: <?php echo $arr['sorted_preference'][0]; ?></p>
       <div class="podium__rank first">
         <svg class="podium__number" viewBox="0 0 27.476 75.03" xmlns="http://www.w3.org/2000/svg">
           <g transform="matrix(1, 0, 0, 1, 214.957736, -43.117417)">
@@ -104,29 +122,31 @@
         </svg>
       </div>
     </div>
-    <div class="podium__item">
-      <p class="podium__city"><b>Supplier 1</b> <br>Score : 1000</p>
+
+  <div class="podium__item">
+      <p class="podium__city"><b> <?php if (isset($arr['sorted_alternatives'][2])) { echo $arr['sorted_alternatives'][2] .'</b> <br>Pref Value: '. $arr['sorted_preference'][2];} else { echo "None"; }; ?></p>
       <div class="podium__rank third"style="color:black;">3</div>
     </div>
   </div>
+
+
    <br>
+
   <table id="urutan">
+  <?php if (count($arr['sorted_alternatives']) > 3) {
+    for ($x=3; $x<count($arr['sorted_alternatives']); $x++) { ?>
   <tr>
-    <td style="text-align:center">Supplier 6</td>
-    <td style="text-align:center">Score : 980</td>
+    <td style="text-align:center"><?php echo ($x+1)?></td>
+    <td style="text-align:center"><?php echo $arr['sorted_alternatives'][$x] ?></td>
+    <td style="text-align:center">Pref Value : <?php echo $arr['sorted_preference'][$x] ?></td>
   </tr>
-  <tr>
-    <td style="text-align:center">Supplier 4</td>
-    <td style="text-align:center">Score : 800</td>
-  </tr>
-  <tr>
-    <td style="text-align:center">Supplier 8</td>
-    <td style="text-align:center">Score : 778</td>
-  </tr>
-  <tr>
-    <td style="text-align:center">Supplier 7</td>
-    <td style="text-align:center">Score : 600</td>
-  </tr>
+  <?php } } ?>
 </table>
+
+<br>
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <button onclick="window.location = 'form.php'">Back</button>
+  </div>
+
 </body>
 </html>
