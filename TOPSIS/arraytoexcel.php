@@ -7,8 +7,7 @@
     $jum = count($allKriteria);
     $jum2 = count($allAlternatif);
 
-    $arr = [];
-
+    $arr = [];       
     // Header row dari kolom 1
     $headerRow = [''];
     foreach ($allKriteria as $k) {
@@ -28,10 +27,13 @@
 
         array_push($arr, $tempArr);
     }
-    
-    // Add weights di last row 
-    array_push($arr, $allWeights);
 
+    // Add weights di last row 
+    $weightRow = [''];
+    foreach ($allWeights as $w) {
+        array_push($weightRow, $w);
+    }
+    array_push($arr, $weightRow);
 
     $xlsx = Shuchkin\SimpleXLSXGen::fromArray($arr);
     $xlsx->saveAs('data.xlsx');

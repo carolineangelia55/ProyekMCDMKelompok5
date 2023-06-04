@@ -5,9 +5,12 @@ import numpy as np
 data = pd.read_excel('C:\\xampp\\htdocs\\ProyekMCDMKelompok5\\TOPSIS\\data.xlsx')
 # maapkan ges soale kl direction e lsg 'gudang.xlsx' pythonku ndak bisa read :( hiks aneh emg)
 
+data = data.iloc[:-1] #biar ga ngambil last row
+
 # Extract nama alternatif dan kriteria
 alternatives = data.iloc[:, 0]
 criteria = data.columns[1:]
+
 
 # Matriks ternormalisasi
 normalized_matrix = data.copy()
@@ -18,7 +21,7 @@ for criterion in criteria:
     
 # Matriks normalisasi terbobot
 # Array utk weightnya
-weights = [5,3,4,4,2]  # Adjust, sesuai inputan nntik
+weights = pd.read_excel('C:\\xampp\\htdocs\\ProyekMCDMKelompok5\\TOPSIS\\data.xlsx').iloc[-1, 1:].tolist()
 
 # Normalisasi weight vector
 weights = weights / np.sum(weights)

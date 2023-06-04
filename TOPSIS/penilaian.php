@@ -86,7 +86,7 @@
         for ($l = 0; $l < $jumlahKriteria; $l++) {
             $kriteriaName = $kriteria[$l];
             echo '<td>
-                    <input type="hidden" name="kriteriaWeights[]" class="textInput" required style="text-align:center" placeholder="'.$kriteriaName.'">;
+                    <input type="text" name="kriteriaWeights[]" class="textInput" required style="text-align:center" placeholder="'.$kriteriaName.'">
                 </td>';
         }
 
