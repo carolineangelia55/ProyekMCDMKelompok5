@@ -64,7 +64,7 @@
                         echo "<th>$kriteriaName</th>";
                         echo '<input type="hidden" name="kriteriaNames[]" class="textInput" value="'.$kriteriaName.'" required>';
                         for ($j = 0; $j < $jumlahKriteria; $j++) {
-                            echo '<td><input type="text" name="nilaiValues[]" style="text-align:center" placeholder="0-4" class="textInput"';
+                            echo '<td><input type="number" min="0" max="4" name="nilaiValues[]" style="text-align:center" placeholder="0-4" class="textInput"';
                             if ($i==$j) {
                                 echo ' value="0" readonly';
                             } else {
