@@ -47,7 +47,7 @@
         $jumlahAlternatif = count($alternatif);
         $jumlahKriteria = count($kriteria);
 
-        echo '<form method="POST" action="arraytoexcel.php">';
+        echo '<form method="POST" action="arraytoexcel.php?tujuan='.$_POST['inputtujuan'].'">';
         echo '<div id="tableContainer">';
         echo '<table>';
         echo '<tr>';
@@ -69,7 +69,7 @@
             echo '<input type="hidden" name="alternatifNames[]" class="textInput" value="'.$alternatifName.'" required>';
 
             for ($k = 0; $k < $jumlahKriteria; $k++) {
-                echo '<td><input type="text" name="nilaiValues[]" class="textInput" required></td>';
+                echo '<td><input type="text" name="nilaiValues[]" class="textInput" style="text-align:center" placeholder="1-5" required></td>';
             }
             echo '</tr>';
         }

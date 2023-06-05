@@ -37,5 +37,5 @@
 
     $xlsx = Shuchkin\SimpleXLSXGen::fromArray($arr);
     $xlsx->saveAs('data.xlsx');
-    header("Location: hasiltopsis.php");
+    header("Location: hasiltopsis.php?tujuan=".$_GET['tujuan']);
 ?>

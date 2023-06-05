@@ -3,7 +3,7 @@ import numpy as np
 import json as json
 
 # Load data dr Excel
-data = pd.read_excel('C:\\xampp\\htdocs\\ProyekMCDMKelompok5\\TOPSIS\\data.xlsx')
+data = pd.read_excel('C:\\xampp0\\htdocs\\ProyekMCDMKelompok5\\TOPSIS\\data.xlsx')
 # maapkan ges soale kl direction e lsg 'gudang.xlsx' pythonku ndak bisa read :( hiks aneh emg)
 
 data = data.iloc[:-1] #biar ga ngambil last row
@@ -22,7 +22,7 @@ for criterion in criteria:
     
 # Matriks normalisasi terbobot
 # Array utk weightnya
-weights = pd.read_excel('C:\\xampp\\htdocs\\ProyekMCDMKelompok5\\TOPSIS\\data.xlsx').iloc[-1, 1:].tolist()
+weights = pd.read_excel('C:\\xampp0\\htdocs\\ProyekMCDMKelompok5\\TOPSIS\\data.xlsx').iloc[-1, 1:].tolist()
 
 # Normalisasi weight vector
 weights = weights / np.sum(weights)

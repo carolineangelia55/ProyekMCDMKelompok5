@@ -1,5 +1,5 @@
 <?php
-    $command = escapeshellcmd('C:\Users\ASUS\anaconda3/python topsis.py');
+    $command = escapeshellcmd('C:/Users/user/anaconda3-2022/python topsis.py');
     $output = shell_exec($command);
     $arr = json_decode($output);
     $arr = get_object_vars($arr);
@@ -69,7 +69,7 @@
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 50%;
-    margin-left: 385px;
+
     }
 
 
@@ -86,10 +86,10 @@
       }
       
     table, th, td {
-        width : 40%;
+      width : 40%;
       border: 2px solid;
-      margin-left:450px;
     }
+  
     button {
     background: transparent;
     padding:10px 40px;
@@ -107,7 +107,8 @@
   <p style="font-size: 27px; margin: right 100px; text-align:center;">
     <b> == Podium Hasil Penilaian == <b>
   </p>
-  <div class="container podium" style="margin-left: 450px;">
+  <h3 style="text-align:center">Tujuan: <?php echo $_GET['tujuan'];?></h3>
+  <div class="container podium" style="justify-content: center;">
     <div class="podium__item">
       <p class="podium__city"><b><?php echo $arr['sorted_alternatives'][1]; ?></b> <br>Pref Value: <?php echo $arr['sorted_preference'][1]; ?></p>
       <div class="podium__rank second" style="color:black;">2</div>
@@ -131,7 +132,7 @@
 
 
    <br>
-
+  <div style="display: flex; align-items: center; justify-content: center;">
   <table id="urutan">
   <?php if (count($arr['sorted_alternatives']) > 3) {
     for ($x=3; $x<count($arr['sorted_alternatives']); $x++) { ?>
@@ -142,6 +143,7 @@
   </tr>
   <?php } } ?>
 </table>
+    </div>
 
 <br>
   <div style="display: flex; align-items: center; justify-content: center;">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
         <script>
@@ -59,7 +59,7 @@
             }
         </script>
     </head>
-    <body>
+    <body style="background-repeat: inherit">
     
         <div class="contact-us">
         <?php include_once "../navbar.php";?>
@@ -69,12 +69,11 @@
             </p>
             <br>
             <br>
+            <form method="POST" action="penilaian.php">
             <div>
                 <div style="position: relative; display: inline-block;">
                 <input type="text" id="inputtujuan" name="inputtujuan" placeholder="Tujuan" style="padding-right: 37px;">
             </div>
-            <form method="POST" action="penilaian.php">
-
                 <div id="inputContainerAlternatif">
                 <!-- ALTERNATIF -->
                 <div class="inputRow">
